@@ -23,7 +23,10 @@ public class TacoCloudApplicationTests {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("home"))
-                .andExpect(content().string(containsString("Welcome to...")));
+                .andExpect(content().string(containsString("<title>Taco Cloud</title>")))
+                .andExpect(content().string(containsString("<h1>Welcome to...</h1>")));
     }
+
+    public void testDesignPage() {}
 
 }
